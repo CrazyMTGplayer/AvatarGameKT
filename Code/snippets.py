@@ -1,3 +1,4 @@
+import random
 def makepool (die_tier, die_amt):
 	pool = []
 	for n in range(die_amt):
@@ -37,7 +38,7 @@ def d12pool():
        return pooling(12,4)
 	
 def startPooling():
-	user_pool_choice = raw_input("choose your pool d6, d8, d10, or d12:")
+	user_pool_choice = raw_input("choose your pool d6, d8, d10, or d12: ")
 	
 	if(user_pool_choice == "6"):
 		return d6pool()
@@ -108,7 +109,7 @@ class Player():
        def getHP():
               return self.hp
        
-       def setHP(newHP)
+       def setHP(newHP):
               self.hp = newHP
 
 
@@ -131,7 +132,7 @@ class Skill():
 
        def refresh():
               active = true
-       def isActive:
+       def isActive():
               return active
 
        def doSkillStuff(encounter):
