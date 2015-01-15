@@ -1,3 +1,4 @@
+import random
 def makepool (die_tier, die_amt):
 	pool = []
 	for n in range(die_amt):
@@ -37,7 +38,7 @@ def d12pool():
        return pooling(12,4)
 	
 def startPooling():
-	user_pool_choice = raw_input("choose your pool d6, d8, d10, or d12:")
+	user_pool_choice = raw_input("choose your pool d6, d8, d10, or d12: ")
 	
 	if(user_pool_choice == "6"):
 		return d6pool()
@@ -73,7 +74,7 @@ def fight():
               combat = resolution()
 
 class Player():
-       def __init__(ele, sty, stats):
+       def __init__(self, ele, sty, stats):
               self.element = ele
               self.style = sty
               self.stat = stats
@@ -108,7 +109,7 @@ class Player():
        def getHP():
               return self.hp
        
-       def setHP(newHP)
+       def setHP(newHP):
               self.hp = newHP
 
 
@@ -131,7 +132,7 @@ class Skill():
 
        def refresh():
               active = true
-       def isActive:
+       def isActive():
               return active
 
        def doSkillStuff(encounter):
@@ -147,31 +148,34 @@ class HealingSkill(Skill):
               encounter.getPlayer.setHP(currentHP + 1)
               return true
 
-class monster():
-	def __init__(maxAttack, maxDefense, maxSpeed):
-		self.maxAttack = maxAttack
-		self.maxDefense = maxDefense
-		self.maxSpeed = maxSpeed
-		self.currentAttack = 0
-		self.currentDefense = 0
-		self.currentSpeed = 0
-		self.currentActivation = 0
-		self.active = false
+class Monster():
+  def __init__(self, maxAttack, maxDefense, maxSpeed):
+    self.maxAttack = maxAttack
+    self.maxDefense = maxDefense
+    self.maxSpeed = maxSpeed
+    self.currentAttack = 0
+    self.currentDefense = 0
+    self.currentSpeed = 0
+    self.currentActivation = 0
+    self.active = False
+    self.hp = 10
 
-	def getActivationLimit():
+  def getActivationLimit():
 		return 15
 	
-	def rollStats():
+  def rollStats():
 		self.currentAttack = rolldx(maxAttack)
 		self.currentDefense = rolldx(maxDefense)
 		self.currentSpeed = rolldx(maxSpeed)
 		self.currentActivation = currentActivation + currentSpeed
 		active = checkActivation()
-	def isActive():
+
+  def isActive():
 		return active
-	def checkActivation():
+
+  def checkActivation():
 		if(currentActivation >= getActivationLimit):
 			currentActivation = 0
-			return true
+			return True
 		else:
-			return false
+			return False
