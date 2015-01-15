@@ -74,7 +74,7 @@ def fight():
               combat = resolution()
 
 class Player():
-       def __init__(ele, sty, stats):
+       def __init__(self, ele, sty, stats):
               self.element = ele
               self.style = sty
               self.stat = stats
@@ -148,31 +148,34 @@ class HealingSkill(Skill):
               encounter.getPlayer.setHP(currentHP + 1)
               return true
 
-class monster():
-	def __init__(maxAttack, maxDefense, maxSpeed):
-		self.maxAttack = maxAttack
-		self.maxDefense = maxDefense
-		self.maxSpeed = maxSpeed
-		self.currentAttack = 0
-		self.currentDefense = 0
-		self.currentSpeed = 0
-		self.currentActivation = 0
-		self.active = false
+class Monster():
+  def __init__(self, maxAttack, maxDefense, maxSpeed):
+    self.maxAttack = maxAttack
+    self.maxDefense = maxDefense
+    self.maxSpeed = maxSpeed
+    self.currentAttack = 0
+    self.currentDefense = 0
+    self.currentSpeed = 0
+    self.currentActivation = 0
+    self.active = False
+    self.hp = 10
 
-	def getActivationLimit():
+  def getActivationLimit():
 		return 15
 	
-	def rollStats():
+  def rollStats():
 		self.currentAttack = rolldx(maxAttack)
 		self.currentDefense = rolldx(maxDefense)
 		self.currentSpeed = rolldx(maxSpeed)
 		self.currentActivation = currentActivation + currentSpeed
 		active = checkActivation()
-	def isActive():
+
+  def isActive():
 		return active
-	def checkActivation():
+
+  def checkActivation():
 		if(currentActivation >= getActivationLimit):
 			currentActivation = 0
-			return true
+			return True
 		else:
-			return false
+			return False
