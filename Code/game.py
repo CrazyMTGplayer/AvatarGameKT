@@ -5,4 +5,5 @@ from player import *
 from combat import combat
 
 if __name__ == "__main__":
-  combat()
+  player = makePlayer()
+  combat(player)

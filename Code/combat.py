@@ -5,9 +5,8 @@ from dicerolls import *
 from player import *
 from monster import *
 
-def combat():
+def combat(player):
 #main game loop
-  player = Player(0,0,0)#makes dummy player to pull health from
   monster = Monster(0,0,0)#makes dummy monster to pull health from
 
   p2 = (2,2,2,2)#locked set for monster for testing
@@ -24,17 +23,17 @@ def combat():
   #start of an encounter
     #print "inside encounter"
     if(p1hp <= (comboPoints[1] * 2)):
-	print "player 2 wins"
+        print player.getName() + " loses"
 	return
     if(p2hp <= (comboPoints[0] * 2)):
-	print "player 1 wins"
+        print player.getName() + " wins"
 	return
 
     if(p1hp <= 0):
-      print "player 2 wins"
+      print player.getName() + " loses"
       return
     if(p2hp <= 0):
-      print "player 1 wins"
+      print player.getName() + " wins"
       return
 
     p1 = bendingPhase(player) 
