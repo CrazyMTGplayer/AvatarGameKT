@@ -84,3 +84,12 @@ def makeMonster(attack, defense, speed, hp):
     monster = Monster(attack, defense, speed, hp)
     monster.rollStats()
     return monster
+
+def makeMob(howMany):
+    mob = []
+    for i in range(0, howMany):
+        mob.append(makeMonster(6, 6, 6, 20))
+    #for loop that makes random monsters
+
+    return mob
+        
