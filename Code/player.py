@@ -12,39 +12,39 @@ class Player():
               self.ability_p = 0
               self.combo_p = 0
               self.skills = []
-              self.hp = 50
+              self.hp = self.resetHP
 
-       def setFightSkills(skill_list):
+       def setFightSkills(self, skill_list):
               self.skills = skill_list
 
-       def getFightSkills():
+       def getFightSkills(self):
               return skills
 
-       def setAP(ap):
+       def setAP(self, ap):
               self.ability_p = ap
 
-       def getAP():
+       def getAP(self):
               return ap
 
-       def setChi(upgrade):
+       def setChi(self, upgrade):
               self.chi += upgrade
 
        def getChi(self):
               return self.chi
 
-       def setCP(cp):
+       def setCP(self, cp):
               self.combo_p = cp
 
-       def getCP():
+       def getCP(self):
               return cp
 
-       def resetHP():
+       def resetHP(self):
               self.hp = self.maxHp
 
-       def getHP():
+       def getHP(self):
               return self.hp
 
-       def setHP(newHP):
+       def setHP(self, newHP):
               self.hp = newHP
 
        def getName(self):

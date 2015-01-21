@@ -35,6 +35,9 @@ class Monster():
         #will be able to attack on a given round
     #rollStats() rolls monster stats during combat
 
+    def getHP(self):
+        return self.hp
+
     def getAtk(self):
         return self.currentAttack
     def setAtk(self, newAtk):
@@ -92,4 +95,6 @@ def makeMob(howMany):
     #for loop that makes random monsters
 
     return mob
-        
+
+def mobHealth(mobsHP):
+    return reduce(lambda x,y: x+y, mobsHP) 
