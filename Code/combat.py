@@ -7,7 +7,7 @@ from monster import *
 
 def combat(player):
 #main game loop
-  monster = Monster(0,0,0)#makes dummy monster to pull health from
+  monster = makeMonster(2, 2, 2, 20)#makes dummy monster to pull health from
 
   p2 = (2,2,2,2)#locked set for monster for testing
   p1hp,p2hp = (player.maxHp, monster.hp)#pull data from player/monster
